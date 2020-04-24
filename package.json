@@ -11,6 +11,7 @@
 		"start": "npm-run-all --parallel dev:*",
 		"dev:start": "nodemon --watch build  --watch config/** --watch model --exec \"node build/bundle\" ",
 		"dev:build": "webpack --watch --config config/webpack.config.js",
+		"heroku-prebuild": "npm install --dev",
 		"prod": "webpack --config config/webpack.config.js & node build/bundle.js"
 	},
 	"engines": {
