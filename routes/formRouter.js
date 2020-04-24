@@ -1,11 +1,11 @@
-import { Router } from "express";
-import { formController } from "../controller";
+import { Router } from 'express'
+import { formController } from '../controller'
 
-const router = Router();
+const router = Router()
 
-router.get("/", (req, res) => res.send("hello World"));
+router.get('/', (req, res) => res.send('hello World'))
 router
-	.route("/form")
+	.route('/form')
 	.get(formController.showAllForms)
-	.post(formController.setForms);
-export default router;
+	.post(formController.setForms)
+export default router

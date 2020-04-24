@@ -1,8 +1,9 @@
 export default new (class FormController {
 	showAllForms(req, res) {
-		res.send("showAllForms");
+		res.send('showAllForms')
 	}
+
 	setForms(req, res) {
-		res.send("setForms");
+		res.send('setForms')
 	}
-})();
+})()
