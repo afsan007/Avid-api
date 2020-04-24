@@ -97,11 +97,11 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (new class FormController {
   showAllForms(req, res) {
-    res.send("showAllForms");
+    res.send('showAllForms');
   }
 
   setForms(req, res) {
-    res.send("setForms");
+    res.send('setForms');
   }
 
 }());
@@ -136,9 +136,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _server__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./server */ "./server.js");
 
-_server__WEBPACK_IMPORTED_MODULE_0__["default"].listen(process.env.PORT, () => {
+_server__WEBPACK_IMPORTED_MODULE_0__["default"].listen(process.env.PORT || 3000, () => {
   console.clear();
-  console.log(`[Avid-api]_server is running on port ${process.env.PORT}`);
+  console.log(`[Avid-api]_server is running on port ${process.env.PORT || 3000}`);
 });
 
 /***/ }),
@@ -158,8 +158,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const router = Object(express__WEBPACK_IMPORTED_MODULE_0__["Router"])();
-router.get("/", (req, res) => res.send("hello World"));
-router.route("/form").get(_controller__WEBPACK_IMPORTED_MODULE_1__["formController"].showAllForms).post(_controller__WEBPACK_IMPORTED_MODULE_1__["formController"].setForms);
+router.get('/', (req, res) => res.send('hello World'));
+router.route('/form').get(_controller__WEBPACK_IMPORTED_MODULE_1__["formController"].showAllForms).post(_controller__WEBPACK_IMPORTED_MODULE_1__["formController"].setForms);
 /* harmony default export */ __webpack_exports__["default"] = (router);
 
 /***/ }),
@@ -181,19 +181,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var body_parser__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(body_parser__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var cookie_parser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! cookie-parser */ "cookie-parser");
 /* harmony import */ var cookie_parser__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(cookie_parser__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _routes_formRouter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./routes/formRouter */ "./routes/formRouter.js");
-/* harmony import */ var morgan__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! morgan */ "morgan");
-/* harmony import */ var morgan__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(morgan__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var express_rate_limit__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! express-rate-limit */ "express-rate-limit");
-/* harmony import */ var express_rate_limit__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(express_rate_limit__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var helmet__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! helmet */ "helmet");
-/* harmony import */ var helmet__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(helmet__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var express_mongo_sanitize__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! express-mongo-sanitize */ "express-mongo-sanitize");
-/* harmony import */ var express_mongo_sanitize__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(express_mongo_sanitize__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var xss_clean__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! xss-clean */ "xss-clean");
-/* harmony import */ var xss_clean__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(xss_clean__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var hpp__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! hpp */ "hpp");
-/* harmony import */ var hpp__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(hpp__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var morgan__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! morgan */ "morgan");
+/* harmony import */ var morgan__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(morgan__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var express_rate_limit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! express-rate-limit */ "express-rate-limit");
+/* harmony import */ var express_rate_limit__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(express_rate_limit__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var helmet__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! helmet */ "helmet");
+/* harmony import */ var helmet__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(helmet__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var express_mongo_sanitize__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! express-mongo-sanitize */ "express-mongo-sanitize");
+/* harmony import */ var express_mongo_sanitize__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(express_mongo_sanitize__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var xss_clean__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! xss-clean */ "xss-clean");
+/* harmony import */ var xss_clean__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(xss_clean__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var hpp__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! hpp */ "hpp");
+/* harmony import */ var hpp__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(hpp__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _routes_formRouter__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./routes/formRouter */ "./routes/formRouter.js");
 
 
 
@@ -206,7 +206,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-__webpack_require__(/*! dotenv */ "dotenv").config(); /////////////////START DATABASE CONFIG///////////////////////////
+__webpack_require__(/*! dotenv */ "dotenv").config(); // //////////////START DATABASE CONFIG///////////////////////////
 
 
 mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.connect(process.env.DB_ADDRESS, {
@@ -215,72 +215,72 @@ mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.connect(process.env.DB_ADDRESS, 
   useCreateIndex: true,
   useFindAndModify: false
 });
-mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.connection.on("connected", () => {
-  console.log("[MongoDB] connection established successfully");
+mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.connection.on('connected', () => {
+  console.log('[MongoDB] connection established successfully');
 });
-mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.connection.on("error", err => {
-  console.log("connection to mongo failed " + err);
+mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.connection.on('error', err => {
+  console.log(`connection to mongo failed ${err}`);
 });
-mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.connection.on("disconnected", () => {
-  console.log("mongo db connection closed");
+mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.connection.on('disconnected', () => {
+  console.log('mongo db connection closed');
 });
-mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.set("useCreateIndex", true);
-mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.Promise = global.Promise; /////////////////END DATABASE CONFIG///////////////////////////
+mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.set('useCreateIndex', true);
+mongoose__WEBPACK_IMPORTED_MODULE_1___default.a.Promise = global.Promise; // ///////////////END DATABASE CONFIG///////////////////////////
 
 const app = express__WEBPACK_IMPORTED_MODULE_0___default()(); // Set security HTTP headers
 
-app.use(helmet__WEBPACK_IMPORTED_MODULE_7___default()()); // Development logging
+app.use(helmet__WEBPACK_IMPORTED_MODULE_6___default()()); // Development logging
 
 if (true) {
-  app.use(morgan__WEBPACK_IMPORTED_MODULE_5___default()("dev"));
+  app.use(morgan__WEBPACK_IMPORTED_MODULE_4___default()('dev'));
 } // Limit requests from same API
 
 
-const limiter = express_rate_limit__WEBPACK_IMPORTED_MODULE_6___default()({
+const limiter = express_rate_limit__WEBPACK_IMPORTED_MODULE_5___default()({
   max: 100,
   windowMs: 60 * 60 * 1000,
-  message: "Too many requests from this IP, please try again in an hour!"
+  message: 'Too many requests from this IP, please try again in an hour!'
 });
-app.use("/api", limiter); // Body parser, reading data from body into req.body
+app.use('/api', limiter); // Body parser, reading data from body into req.body
 
 app.use(express__WEBPACK_IMPORTED_MODULE_0___default.a.json({
-  limit: "10kb"
+  limit: '10kb'
 }));
 app.use(cookie_parser__WEBPACK_IMPORTED_MODULE_3___default()()); // Data sanitization against NoSQL query injection
 
-app.use(express_mongo_sanitize__WEBPACK_IMPORTED_MODULE_8___default()()); // Data sanitization against XSS
+app.use(express_mongo_sanitize__WEBPACK_IMPORTED_MODULE_7___default()()); // Data sanitization against XSS
 
-app.use(xss_clean__WEBPACK_IMPORTED_MODULE_9___default()()); // Prevent parameter pollution
+app.use(xss_clean__WEBPACK_IMPORTED_MODULE_8___default()()); // Prevent parameter pollution
 
-app.use(hpp__WEBPACK_IMPORTED_MODULE_10___default()({
-  whitelist: ["duration", "ratingsQuantity", "ratingsAverage", "maxGroupSize", "difficulty", "price"]
+app.use(hpp__WEBPACK_IMPORTED_MODULE_9___default()({
+  whitelist: ['duration', 'ratingsQuantity', 'ratingsAverage', 'maxGroupSize', 'difficulty', 'price']
 }));
-app.use(morgan__WEBPACK_IMPORTED_MODULE_5___default()("combined")); /////////////////START APP MIDDLEWARE///////////////////////////
+app.use(morgan__WEBPACK_IMPORTED_MODULE_4___default()('combined')); // ///////////////START APP MIDDLEWARE///////////////////////////
 
 app.use(cookie_parser__WEBPACK_IMPORTED_MODULE_3___default()());
 app.use(body_parser__WEBPACK_IMPORTED_MODULE_2___default.a.json());
 app.use(body_parser__WEBPACK_IMPORTED_MODULE_2___default.a.urlencoded({
   extended: true
 }));
-app.disable("x-powered-by"); //////////////ErrorHandler
+app.disable('x-powered-by'); // ////////////ErrorHandler
 
-const miscellaneousErrors = err => process.on("uncaughtException", err => {
-  console.log("UNHANDLED REJECTION! 🤕 shutting down...");
+const miscellaneousErrors = err => process.on('uncaughtException', err => {
+  console.log('UNHANDLED REJECTION! 🤕 shutting down...');
   console.log(err.name, err.message);
   process.exit(1);
 });
 
-process.on("unhandledRejection", miscellaneousErrors);
-process.on("uncaughtException", miscellaneousErrors); ////////////////START ROUTER CONFIG///////////////////////////
+process.on('unhandledRejection', miscellaneousErrors);
+process.on('uncaughtException', miscellaneousErrors); // //////////////START ROUTER CONFIG///////////////////////////
 
-app.use("/", _routes_formRouter__WEBPACK_IMPORTED_MODULE_4__["default"]); /////////////////START ERROR HANDLING///////////////////////////
+app.use('/', _routes_formRouter__WEBPACK_IMPORTED_MODULE_10__["default"]); // ///////////////START ERROR HANDLING///////////////////////////
 
 app.use((req, res, next) => {
-  res.status(404).send("404");
+  res.status(404).send('404');
 });
 app.use((err, req, res, next) => {
   res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
   res.status(err.status || 500);
   res.send(err.message);
 });
